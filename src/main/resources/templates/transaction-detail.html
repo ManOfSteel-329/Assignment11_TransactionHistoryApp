@@ -1,0 +1,18 @@
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Transaction Detail</title>
+    <link rel="stylesheet" href="/css/transactions.css"/>
+</head>
+<body>
+<!--Transaction ID: 38 (Credit)-->
+<!--h1-h6 block-->
+<!--<h1>lsdkfj <h2>lskjdf</h2> other stuff</h1>-->
+<h2>Transaction ID: <span th:text="${transaction.id}"></span> (<span th:text="${transaction.type == 'D' ? 'Debit' : 'Credit'}"></span>)</h2>
+<!--date, amount, description, back-->
+<p>Date: <span th:text="${transaction.date}"></span></p>
+<p>Amount: <span th:text="${transaction.type == 'C' ? '-' : ''}"></span><span th:text="${transaction.amount}"></span></p>
+<p>Description: <span th:text="${transaction.description}"></span></p>
+<a th:href="@{/transactions}">Back</a>
+
+</body>
+</html>
